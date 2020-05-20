@@ -10,6 +10,20 @@ void main() {
 
   group('Seasons test:', () {
     test(
+      'should return the current season',
+      () async {
+        // arrange
+
+        // act
+        final season = await jikan.seasons.getSeason();
+
+        // assert
+        expect(season.year, greaterThanOrEqualTo(2020));
+        expect(season.name, anyOf(['Winter', 'Spring', 'Summer', 'Fall']));
+        // assert
+      },
+    );
+    test(
       'should return \'Winter 1984\' season',
       () async {
         //arrange

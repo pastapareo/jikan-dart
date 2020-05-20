@@ -6,8 +6,15 @@ class Seasons extends EndpointBase {
 
   Seasons(JikanBase api) : super(api);
 
-  Future<Season> getSeason(int year, String season) async {
-    var jsonResponse = await _get('$_path/$year/$season');
+  Future<Season> getSeason([int year, String season]) async {
+    var path;
+    if (year == null && season == null) {
+      path = '$_path';
+    } else {
+      path = '$_path/$year/$season';
+    }
+
+    var jsonResponse = await _get(path);
     var map = json.decode(jsonResponse);
 
     return Season.fromJson(map);
