@@ -1,4 +1,4 @@
-import 'package:jikan/src/models/_models.dart';
+part of jikan;
 
 class JikanException implements Exception {
   String message;
