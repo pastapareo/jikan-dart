@@ -1,0 +1,42 @@
+library jikan.models;
+
+import 'package:json_annotation/json_annotation.dart';
+
+part '_models.g.dart';
+
+part 'mal_base.dart';
+part 'jikan_base_model.dart';
+part 'anime_simple.dart';
+part 'anime.dart';
+part 'anime_characters_staff.dart';
+part 'anime_episodes.dart';
+part 'anime_news.dart';
+part 'anime_pictures.dart';
+part 'anime_videos.dart';
+part 'anime_stats.dart';
+part 'anime_more_info.dart';
+part 'anime_recommendations.dart';
+part 'anime_user_updates.dart';
+part 'anime_forum_topics.dart';
+part 'anime_reviews.dart';
+part 'season.dart';
+part 'related_anime.dart';
+part 'aired.dart';
+part 'link.dart';
+part 'character.dart';
+part 'voice_actor.dart';
+part 'staff.dart';
+part 'episode.dart';
+part 'article.dart';
+part 'picture.dart';
+part 'video_episode.dart';
+part 'promo.dart';
+part 'score.dart';
+part 'forum_topic.dart';
+part 'forum_topic_post.dart';
+part 'anime_review.dart';
+part 'anime_reviewer.dart';
+part 'anime_review_score.dart';
+part 'recommendation.dart';
+part 'user.dart';
+part 'error.dart';
