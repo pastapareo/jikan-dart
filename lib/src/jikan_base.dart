@@ -7,15 +7,18 @@ abstract class JikanBase {
   Seasons _seasons;
   Animes _animes;
   Persons _persons;
+  Characters _characters;
 
   Seasons get seasons => _seasons;
   Animes get animes => _animes;
   Persons get persons => _persons;
+  Characters get characters => _characters;
 
   JikanBase(this._client) {
     _seasons = Seasons(this);
     _animes = Animes(this);
     _persons = Persons(this);
+    _characters = Characters(this);
   }
 
   Future<String> _get(String path) {

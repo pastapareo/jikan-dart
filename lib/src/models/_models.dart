@@ -24,6 +24,7 @@ part 'person.dart';
 part 'related_anime.dart';
 part 'aired.dart';
 part 'link.dart';
+part 'character.dart';
 part 'character_entry.dart';
 part 'voice_actor.dart';
 part 'staff_entry.dart';

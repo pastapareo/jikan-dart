@@ -340,6 +340,33 @@ Link _$LinkFromJson(Map<String, dynamic> json) {
     ..language = json['language'] as String;
 }
 
+Character _$CharacterFromJson(Map<String, dynamic> json) {
+  return Character()
+    ..malId = json['mal_id'] as int
+    ..requestHash = json['request_hash'] as String
+    ..requestCached = json['request_cached'] as bool
+    ..requestCacheExpiry = json['request_cache_expiry'] as int
+    ..url = json['url'] as String
+    ..name = json['name'] as String
+    ..nameKanji = json['name_kanji'] as String
+    ..nicknames = (json['nicknames'] as List)?.map((e) => e as String)?.toList()
+    ..about = json['about'] as String
+    ..memberFavorites = json['member_favorites'] as int
+    ..imageUrl = json['image_url'] as String
+    ..animeography = (json['animeography'] as List)
+        ?.map(
+            (e) => e == null ? null : Link.fromJson(e as Map<String, dynamic>))
+        ?.toList()
+    ..mangaography = (json['mangaography'] as List)
+        ?.map(
+            (e) => e == null ? null : Link.fromJson(e as Map<String, dynamic>))
+        ?.toList()
+    ..voiceActors = (json['voice_actors'] as List)
+        ?.map(
+            (e) => e == null ? null : Link.fromJson(e as Map<String, dynamic>))
+        ?.toList();
+}
+
 CharacterEntry _$CharacterEntryFromJson(Map<String, dynamic> json) {
   return CharacterEntry()
     ..malId = json['mal_id'] as int
