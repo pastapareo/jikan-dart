@@ -10,7 +10,7 @@ void main() {
 
   group('Persons test:', () {
     test(
-      'should return Minase Inori',
+      'should return Rie Takahashi',
       () async {
         // arrange
 

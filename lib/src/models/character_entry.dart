@@ -1,7 +1,7 @@
 part of jikan.models;
 
 @JsonSerializable(createToJson: false)
-class Character implements MalBase {
+class CharacterEntry implements MalBase {
   @override
   @JsonKey(name: 'mal_id')
   int malId;
@@ -17,7 +17,8 @@ class Character implements MalBase {
   @JsonKey(name: 'voice_actors')
   List<VoiceActor> voiceActors;
 
-  Character();
+  CharacterEntry();
 
-  factory Character.fromJson(Map<String, dynamic> json) => _$CharacterFromJson(json);
+  factory CharacterEntry.fromJson(Map<String, dynamic> json) =>
+      _$CharacterEntryFromJson(json);
 }

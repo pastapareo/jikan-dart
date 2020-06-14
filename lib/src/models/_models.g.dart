@@ -99,12 +99,13 @@ AnimeCharactersStaff _$AnimeCharactersStaffFromJson(Map<String, dynamic> json) {
     ..requestCached = json['request_cached'] as bool
     ..requestCacheExpiry = json['request_cache_expiry'] as int
     ..characters = (json['characters'] as List)
-        ?.map((e) =>
-            e == null ? null : Character.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : CharacterEntry.fromJson(e as Map<String, dynamic>))
         ?.toList()
     ..staff = (json['staff'] as List)
-        ?.map(
-            (e) => e == null ? null : Staff.fromJson(e as Map<String, dynamic>))
+        ?.map((e) =>
+            e == null ? null : StaffEntry.fromJson(e as Map<String, dynamic>))
         ?.toList();
 }
 
@@ -333,11 +334,14 @@ Link _$LinkFromJson(Map<String, dynamic> json) {
     ..malId = json['mal_id'] as int
     ..type = json['type'] as String
     ..name = json['name'] as String
-    ..url = json['url'] as String;
+    ..url = json['url'] as String
+    ..imageUrl = json['imageUrl'] as String
+    ..role = json['role'] as String
+    ..language = json['language'] as String;
 }
 
-Character _$CharacterFromJson(Map<String, dynamic> json) {
-  return Character()
+CharacterEntry _$CharacterEntryFromJson(Map<String, dynamic> json) {
+  return CharacterEntry()
     ..malId = json['mal_id'] as int
     ..url = json['url'] as String
     ..imageUrl = json['imageUrl'] as String
@@ -358,8 +362,8 @@ VoiceActor _$VoiceActorFromJson(Map<String, dynamic> json) {
     ..language = json['language'] as String;
 }
 
-Staff _$StaffFromJson(Map<String, dynamic> json) {
-  return Staff()
+StaffEntry _$StaffEntryFromJson(Map<String, dynamic> json) {
+  return StaffEntry()
     ..malId = json['mal_id'] as int
     ..name = json['name'] as String
     ..url = json['url'] as String

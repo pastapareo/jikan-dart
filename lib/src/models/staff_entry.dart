@@ -1,7 +1,7 @@
 part of jikan.models;
 
 @JsonSerializable(createToJson: false)
-class Staff implements MalBase {
+class StaffEntry implements MalBase {
   @override
   @JsonKey(name: 'mal_id')
   int malId;
@@ -15,7 +15,7 @@ class Staff implements MalBase {
 
   List<String> positions;
 
-  Staff();
+  StaffEntry();
 
-  factory Staff.fromJson(Map<String, dynamic> json) => _$StaffFromJson(json);
+  factory StaffEntry.fromJson(Map<String, dynamic> json) => _$StaffEntryFromJson(json);
 }

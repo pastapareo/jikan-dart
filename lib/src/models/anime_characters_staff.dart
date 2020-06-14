@@ -14,9 +14,9 @@ class AnimeCharactersStaff implements JikanBaseModel {
   @JsonKey(name: 'request_cache_expiry')
   int requestCacheExpiry;
 
-  List<Character> characters;
+  List<CharacterEntry> characters;
 
-  List<Staff> staff;
+  List<StaffEntry> staff;
 
   AnimeCharactersStaff();
 
