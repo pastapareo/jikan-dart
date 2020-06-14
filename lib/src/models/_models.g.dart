@@ -240,6 +240,34 @@ Season _$SeasonFromJson(Map<String, dynamic> json) {
         ?.toList();
 }
 
+Person _$PersonFromJson(Map<String, dynamic> json) {
+  return Person()
+    ..malId = json['mal_id'] as int
+    ..requestHash = json['request_hash'] as String
+    ..requestCached = json['request_cached'] as bool
+    ..requestCacheExpiry = json['request_cache_expiry'] as int
+    ..name = json['name'] as String
+    ..givenName = json['given_name'] as String
+    ..familyName = json['family_name'] as String
+    ..alternativeNames =
+        (json['alternative_names'] as List)?.map((e) => e as String)?.toList()
+    ..birthday = json['birthday'] == null
+        ? null
+        : DateTime.parse(json['birthday'] as String)
+    ..memberFavorites = json['member_favorites'] as int
+    ..about = json['about'] as String
+    ..voiceActingRoles = (json['voice_acting_roles'] as List)
+        ?.map((e) => e == null
+            ? null
+            : VoiceActingRole.fromJson(e as Map<String, dynamic>))
+        ?.toList()
+    ..animeStaffPositions = (json['anime_staff_positions'] as List)
+        ?.map((e) => e == null
+            ? null
+            : AnimeStaffPosition.fromJson(e as Map<String, dynamic>))
+        ?.toList();
+}
+
 RelatedAnime _$RelatedAnimeFromJson(Map<String, dynamic> json) {
   return RelatedAnime()
     ..sequel = (json['Sequel'] as List)
@@ -477,6 +505,25 @@ User _$UserFromJson(Map<String, dynamic> json) {
     ..episodesTotal = json['episodes_total'] as int
     ..date =
         json['date'] == null ? null : DateTime.parse(json['date'] as String);
+}
+
+VoiceActingRole _$VoiceActingRoleFromJson(Map<String, dynamic> json) {
+  return VoiceActingRole()
+    ..role = json['role'] as String
+    ..anime = json['anime'] == null
+        ? null
+        : Link.fromJson(json['anime'] as Map<String, dynamic>)
+    ..character = json['character'] == null
+        ? null
+        : Link.fromJson(json['character'] as Map<String, dynamic>);
+}
+
+AnimeStaffPosition _$AnimeStaffPositionFromJson(Map<String, dynamic> json) {
+  return AnimeStaffPosition()
+    ..position = json['position'] as String
+    ..anime = json['anime'] == null
+        ? null
+        : Link.fromJson(json['anime'] as Map<String, dynamic>);
 }
 
 JikanError _$JikanErrorFromJson(Map<String, dynamic> json) {

@@ -12,6 +12,12 @@ class Link implements MalBase {
 
   String url;
 
+  String imageUrl;
+
+  String role;
+
+  String language;
+
   Link();
 
   factory Link.fromJson(Map<String, dynamic> json) => _$LinkFromJson(json);

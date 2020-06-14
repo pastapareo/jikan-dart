@@ -6,13 +6,16 @@ abstract class JikanBase {
 
   Seasons _seasons;
   Animes _animes;
+  Persons _persons;
 
   Seasons get seasons => _seasons;
   Animes get animes => _animes;
+  Persons get persons => _persons;
 
   JikanBase(this._client) {
     _seasons = Seasons(this);
     _animes = Animes(this);
+    _persons = Persons(this);
   }
 
   Future<String> _get(String path) {
